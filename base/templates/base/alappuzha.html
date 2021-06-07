@@ -15,13 +15,13 @@
               </tr>
             </thead>
             {% for hospitals in hospitals %}
-            {% ifequal hospitals.district  'ernakulam' %}
+            {% ifequal hospitals.district  'ALAPPUZHA' %}
             <tbody>
               <tr>
                 <th scope="row">{{hospitals.id}}</th>
                 <td>{{hospitals.name}}</td>
                 <td>{{hospitals.district}}</td>
-                <td>{{hospitals.beds}}</td>
+                <td>{{hospitals.beds_available}}</td>
               </tr>
             </tbody>
             {% endifequal %}
