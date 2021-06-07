@@ -14,18 +14,22 @@
                 <th scope="col">Availabl no. of beds</th>
               </tr>
             </thead>
+            {% if hospitals.district = 'ernakulam' %}
             {% for hospitals in hospitals %}
-            {% if district=ernakulam in hospitals %}
+
             <tbody>
               <tr>
                 <th scope="row">{{hospitals.id}}</th>
                 <td>{{hospitals.name}}</td>
+                
                 <td>{{hospitals.district}}</td>
+                
                 <td>{{hospitals.beds}}</td>
               </tr>
             </tbody>
-            {% endif %}
+
             {% endfor %}
+            {% endif %}
           </table>
     </div>
 </section>
