@@ -10,6 +10,7 @@ def home(request):
 def register(request):
     return render(request , 'base/register.html')
 
-def alappuzha(request):
+def district(request, disid):
     hospital = hospitals.objects.all()
-    return render(request , 'base/alappuzha.html',{'hospitals' : hospital})
+    if disid == 1 :
+        return render(request , 'base/district.html', {'hospitals' : hospital, 'id' : disid , 'name' : 'ALAPPUZHA'} )

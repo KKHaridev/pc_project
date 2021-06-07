@@ -23,14 +23,14 @@
                       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                           <li class="nav-item ps-2 pe-2">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                           </li>
                           <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Find in ur District
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <li><a class="dropdown-item" href="{% url 'alappuzha' %}">Alappuzha</a></li>
+                              <li><a class="dropdown-item" href="{% url 'district' 1 %}">Alappuzha</a></li>
                               <li><a class="dropdown-item" href="#">Ernakulam</a></li>
                               <li><a class="dropdown-item" href="#">Idukki</a></li>
                               <li><a class="dropdown-item" href="#">Kannur</a></li>
@@ -122,13 +122,13 @@
                     <th scope="col">Availabl no. of beds</th>
                   </tr>
                 </thead>
-                {% for hospitals in hospitals %}
+                {% for hospital in hospitals %}
                 <tbody>
                   <tr>
-                    <th scope="row">{{hospitals.id}}</th>
-                    <td>{{hospitals.name}}</td>
-                    <td>{{hospitals.district}}</td>
-                    <td>{{hospitals.beds_available}}</td>
+                    <th scope="row">{{hospital.id}}</th>
+                    <td>{{hospital.name}}</td>
+                    <td>{{hospital.district}}</td>
+                    <td>{{hospital.beds_available}}</td>
                   </tr>
                 </tbody>
                 {% endfor %}
